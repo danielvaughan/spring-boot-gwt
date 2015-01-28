@@ -1,15 +1,9 @@
 spring-boot-gwt
 ===============
 
+This is a modification of Ekito's example to use GWT 2.7.0 instead of 2.6.0 and Gradle instead of Maven.
+
 A quickstart spring boot gwt application
-
-## GWT Developer Console
-
-Use the GWT console with : 
-- mvn gwt:run
-- mvn gwt:debug
-or simply use mvn install as useal
-
 
 ## What's in the sources
 
