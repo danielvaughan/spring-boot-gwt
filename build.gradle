@@ -1,0 +1,38 @@
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'gwt'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("de.richsource.gradle.plugins:gwt-gradle-plugin:0.5")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.1.RELEASE")
+    }
+}
+
+gwt {
+    gwtVersion='2.7.0'
+    modules = ['fr.ekito.gwt.GwtWebApp']
+    minHeapSize = '256M'
+    maxHeapSize = '512M'
+    logLevel = 'INFO'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    //compile("org.hibernate:hibernate-validator")
+    //compile("com.google.gwt:gwt-user:2.7.0")
+    compile("com.google.gwt.inject:gin:2.1.2")
+}
